@@ -47,6 +47,8 @@ blockquote {
   color: $primary-black;
   font-weight: bold;
   font-size: 42px;
+  padding-bottom: 25px;
+  // margin-bottom: 42;
 }
 
 h1,
@@ -54,3 +56,9 @@ h2,
 h3 {
   color: $primary-black;
 }
+
+p{
+  padding: 0;
+  margin:0;
+}
+

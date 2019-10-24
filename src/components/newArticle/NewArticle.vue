@@ -14,8 +14,6 @@
         v-on:edit="articleTextEdit"
       />
     </div>
-    <!-- {{articleTitle}}<br/>
-    {{articleText}} -->
   </div>
 </template>
 
