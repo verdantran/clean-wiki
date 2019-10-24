@@ -27,7 +27,7 @@
 }
 .medium-editor-toolbar li button:hover {
   background-color: #000;
-  color: #a2d7c7;
+  color: $accent-blue;
 }
 .medium-editor-toolbar li .medium-editor-button-first {
   border-bottom-left-radius: 50px;
@@ -42,7 +42,7 @@
 }
 .medium-editor-toolbar li .medium-editor-button-active {
   background-color: #000;
-  color: #a2d7c7;
+  color: $accent-blue;// #a2d7c7;
 }
 
 .medium-editor-toolbar-form {

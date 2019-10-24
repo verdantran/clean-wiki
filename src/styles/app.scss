@@ -1,0 +1,56 @@
+//https://coolors.co/dbbd5b-151718-d3d0cb-e7e5df-44bba4
+$font-stack: Merriweather, Helvetica, Arial, sans-serif;
+
+$primary-black: #131313;
+$primary-grey: #5b5b59;
+$accent-gold: #d8b96b;
+$accent-blue: #5eb1bf;
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather&display=swap);
+@import "./styles/editor.scss";
+@import "./styles/editor-skin.scss";
+
+#app {
+  font-family: $font-stack;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $primary-grey;
+  margin-top: 60px;
+}
+
+.editor-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+::selection {
+  background: $accent-gold; /* WebKit/Blink Browsers */
+  color: $primary-grey;
+}
+
+:focus {
+  outline: none;
+}
+
+a {
+  color: $accent-blue;
+  text-decoration: none;
+}
+
+blockquote {
+  border-left: 3px solid $accent-blue;
+  padding-left: 25px;
+}
+
+.article-title-container {
+  color: $primary-black;
+  font-weight: bold;
+  font-size: 42px;
+}
+
+h1,
+h2,
+h3 {
+  color: $primary-black;
+}
