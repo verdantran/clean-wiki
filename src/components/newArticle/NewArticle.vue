@@ -2,46 +2,49 @@
   <div id="app">
     <div class="editor-container">
       <div class="article-title-container">
-        <medium-editor
-          data-placeholder="Title"
-          :text="articleTitle"
-          v-on:edit="articleTitleEdit"
-        />
+        <editor placeholder="Title" @input="titleInput"></editor>
       </div>
-      <medium-editor
-        data-placeholder="Article content"
-        :text="articleText"
-        v-on:edit="articleTextEdit"
-      />
+      <editor placeholder="Article content" @input="contentInput"></editor>
     </div>
+    {{contentHtml}}
+    {{titleHtml}}
   </div>
 </template>
 
 <script>
-import editor from 'vue2-medium-editor'
+import editor from '../editor'
 
 export default {
   name: 'app',
   components: {
-    'medium-editor': editor
+    editor
   },
   data: function () {
     return {
-      articleText: '',
-      articleTitle: ''
+      saveTimeout: 1000,
+      titleHtml: '',
+      contentHtml: ''
     }
   },
   methods: {
-    articleTitleEdit: function (operation) {
-      this.articleTitle = operation.api.origElements.innerHTML
-    },
-    articleTextEdit: function (operation) {
-      this.articleText = operation.api.origElements.innerHTML
+    titleInput (rawHtml) {
       clearTimeout(this.timeout)
-      this.timeout = setTimeout(() => this.save(), 2000)
+
+      this.titleHtml = rawHtml
+      this.timeout = setTimeout(() => {
+        this.save()
+      }, this.saveTimeout)
     },
-    save: function () {
-      console.log(`saving`)
+    contentInput (rawHtml) {
+      clearTimeout(this.timeout)
+
+      this.contentHtml = rawHtml
+      this.timeout = setTimeout(() => {
+        this.save()
+      }, this.saveTimeout)
+    },
+    save () {
+      console.log('saving')
     }
   }
 }
